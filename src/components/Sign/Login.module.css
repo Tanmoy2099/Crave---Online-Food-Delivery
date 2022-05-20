@@ -1,0 +1,29 @@
+.container {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+}
+
+.success {
+    height: 20rem;
+    color: #ffc107;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    display: flex;
+    color: #ffc107;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        font-size: 1.3rem;
+    }
+
+}

@@ -1,0 +1,24 @@
+.containerWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.container {
+    max-width: 132rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: Fadein 400ms ease-in;
+}
+
+@keyframes Fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

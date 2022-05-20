@@ -1,0 +1,35 @@
+.container {
+    z-index: 100;
+    position: fixed;
+    border-radius: 5rem;
+    /* background-color: rgba(255, 255, 255, 0.473); */
+    background-color: rgba(20, 13, 13, 0.685);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80rem;
+    min-width: 70rem;
+    padding: 3rem 5rem;
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid #ffc107;
+    border-top: 2px solid #ffc107;
+    object-fit: fill;
+}
+
+@media only screen and (max-width: 727px) {
+
+    .container {
+        min-width: 95vw;
+        padding: 2rem;
+        border-radius: 2rem;
+
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        min-width: 100vw;
+        padding: 1rem;
+
+    }
+}

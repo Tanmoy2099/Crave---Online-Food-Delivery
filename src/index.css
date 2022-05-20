@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #dad2d2b9;
+  /* background-image: url(https://media.istockphoto.com/vectors/line-fork-knife-and-plate-continuous-one-line-drawing-cutlery-cooking-vector-id1254016301?k=20&m=1254016301&s=612x612&w=0&h=yTlMzAGBeApGwd6Zb8QqLgVnsxVGOImpqAzekHyzTrg=); */
+
+  /* background-size: 300px 100px; */
+
+  box-sizing: border-box;
+}
+
+/* @media only screen and (max-width:1200px) {
+  html {
+    font-size: 80%;
+  }
+
+  body {
+    width: 80vw;
+    margin: 0 auto;
+  }
+} */
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  z-index: 25;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e4e44d;
+  border-radius: 15px;
+  border: 2px solid #291c1c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c4c446;
+}
+
+@media only screen and (max-width: 300px) {
+  html {
+    font-size: 45%;
+  }
+}

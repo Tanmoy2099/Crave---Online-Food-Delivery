@@ -1,0 +1,178 @@
+.container {
+  display: block;
+  height: 60rem;
+  width: 100%;
+  /* object-fit: fill; */
+}
+
+.mainImage {
+  display: flex;
+  height: 60rem;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+}
+
+.carouselImg {
+  object-fit: fill;
+}
+
+.heroSlide {
+  position: absolute;
+  left: 0;
+  object-fit: contain;
+}
+
+.frontLogo {
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  height: 57rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.frontLogo--span1 {
+
+  margin: 0 auto 1rem auto;
+  padding: 0.1rem 1rem;
+  background-color: rgba(0, 0, 0, 0.54);
+  border-radius: 9rem;
+  box-shadow: 3rem 2rem 1rem rgba(0, 0, 0, 0.348);
+  font-size: 12rem;
+  animation: leftToRight 500ms ease-in-out;
+  z-index: 1;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+
+
+.frontLogo--span2 {
+  font-weight: 400;
+  color: white;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 7rem;
+  box-shadow: 3rem 2rem 1rem rgba(0, 0, 0, 0.23);
+  animation: RightToLeft 500ms ease-in-out;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50rem);
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translateX(5rem);
+
+  }
+
+  100% {
+    transform: translateX(0rem);
+
+  }
+}
+
+.carouselImg {
+  object-fit: contain;
+}
+
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50rem);
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translateX(-5rem);
+
+  }
+
+  100% {
+    transform: translateX(0rem);
+
+  }
+}
+
+@media only screen and (max-width: 783px) {
+  .mainImage {
+    display: flex;
+    height: 60rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .frontLogo {
+    height: 5vw;
+  }
+
+  .container {
+    display: block;
+    height: 28rem;
+  }
+
+  .mainImage {
+    display: flex;
+    height: 28rem;
+    object-fit: fill;
+  }
+
+  .frontLogo {
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    height: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frontLogo {
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    height: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frontLogo--span1 {
+
+    margin: 0 auto 1rem auto;
+    padding: 0.1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.54);
+    border-radius: 9rem;
+    box-shadow: 3rem 2rem 1rem rgba(0, 0, 0, 0.348);
+    font-size: 5rem;
+    animation: leftToRight 500ms ease-in-out;
+    z-index: 1;
+    color: white;
+  }
+
+
+
+  .frontLogo--span2 {
+    font-weight: 400;
+    color: white;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 7rem;
+    box-shadow: 3rem 2rem 1rem rgba(0, 0, 0, 0.23);
+    animation: RightToLeft 500ms ease-in-out;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+
+
+  .mainImage {
+    object-fit: fill;
+  }
+}

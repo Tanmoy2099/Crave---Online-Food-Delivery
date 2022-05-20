@@ -1,0 +1,23 @@
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 60rem;
+}
+
+.empty {
+  height: 20rem;
+  color: #ffc107;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 727px) {
+  
+  .itemContainer {
+    min-height: 32rem;
+  }
+}

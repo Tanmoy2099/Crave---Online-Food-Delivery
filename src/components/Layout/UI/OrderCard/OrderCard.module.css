@@ -1,0 +1,173 @@
+.container {
+    width: 32rem;
+    height: 40rem;
+    background-color: #ffffff;
+    backdrop-filter: blur(10px);
+    margin: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.discount {
+    display: inline;
+    max-width: 60%;
+    height: 3rem;
+    background-color: #ff0000f8;
+    color: white;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    padding: 0.1rem 0.5rem;
+    position: relative;
+    bottom: 5rem;
+    left: 0.2rem
+}
+
+.imgContainer {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 2.5rem;
+}
+
+.cardimage {
+    padding: 4px;
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+
+}
+
+.cardInfoBox {
+    position: relative;
+    bottom: 1rem;
+    margin: 5px;
+    min-height: 15%;
+    bottom: 2.3rem;
+}
+
+.description {
+    height: 5rem;
+    font-size: 1.3rem;
+    overflow: auto;
+    /* margin-bottom: 1rem; */
+}
+
+.cartButton {
+    width: 94%;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    margin: -1rem 1rem;
+}
+
+.buttonContainer {
+    width: 94%;
+    border-radius: 1rem;
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    margin: -1rem auto 0;
+    overflow: hidden;
+}
+
+.inputNum {
+    width: 30%;
+    max-height: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    border: none;
+}
+
+.changeButton {
+    width: 20%;
+    height: 4rem;
+    font-size: 2.3rem;
+}
+
+.title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 3px;
+}
+
+p {
+    font-size: 1.1rem;
+    min-height: 35%;
+    margin: 3px;
+    height: 6rem;
+}
+
+.container:hover {
+    -webkit-box-shadow: 5px 6px 12px -1px #0000007d;
+    -moz-box-shadow: 5px 6px 12px -1px #0000007d;
+    box-shadow: 5px 6px 12px -1px #0000007d;
+
+}
+
+
+.description420 {
+    display: none;
+}
+
+@media only screen and (max-width: 520px) {
+
+
+    /* .container { */
+    /* width: 65vw; */
+    /* height: 40rem; */
+    /* margin: 0.4rem; */
+    /* } */
+
+    .changeButton {
+        width: 20%;
+    }
+
+    .inputNum {
+        width: 30%;
+        max-height: 4rem;
+        text-align: center;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .container {
+        box-sizing: border-box;
+        width: 94vw;
+        height: 25rem;
+        margin: 0.4rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgContainer {
+        height: 52%;
+        width: 100%;
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cardimage {
+        padding: 2px;
+        border-radius: 2rem;
+        width: 50%;
+        height: 100%;
+        object-fit: fill;
+
+    }
+
+    .description420 {
+        display: flex;
+        padding: 0.5rem;
+        width: 50%;
+        height: 90%;
+        font-size: 1.4rem;
+        overflow: auto;
+        text-align: center;
+    }
+
+    .description {
+        display: none;
+    }
+}

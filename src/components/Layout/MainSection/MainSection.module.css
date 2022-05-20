@@ -1,0 +1,111 @@
+.categories {
+    height: 5rem;
+    justify-content: center;
+    border-radius: 1rem 3rem 3rem 1rem;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    border: 2px solid black;
+    font-weight: 700;
+    margin: 5rem 0;
+    box-sizing: border-box;
+}
+
+
+.categories:hover {
+    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e)
+}
+
+.servicesContainer {
+    margin: 2rem auto;
+    width: 80vw;
+    height: 30rem;
+    /* background-color: #fff; */
+    backdrop-filter: blur(10px);
+    border-radius: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    -webkit-box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
+    box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
+    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e)
+}
+
+.services {
+    margin: 2rem;
+    width: 28rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(255, 255, 255, 0); */
+}
+
+.servicesImg {
+    object-fit: contain;
+    max-height: 70%;
+    width: 20rem;
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .servicesContainer {
+        height: 20rem;
+    }
+
+    .services {
+        margin: 1rem;
+        width: 20rem;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+    }
+
+    .servicesImg {
+        height: 70%;
+        width: 15rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .servicesContainer {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .services h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+    .servicesContainer {
+        height: auto;
+        width: auto;
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .services:nth-child(2) {
+        position: relative;
+        left: 40vw;
+    }
+
+
+    .services h2 {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media only screen and (max-width: 380px) {
+
+    .services:nth-child(2) {
+        position: relative;
+        left: 25vw;
+    }
+}

@@ -1,0 +1,68 @@
+.container {
+    z-index: 100;
+    position: fixed;
+    border-radius: 3rem;
+    /* background-color: rgba(255, 255, 255, 0.473); */
+    background-color: rgba(20, 13, 13, 0.685);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 30vh;
+    width: 60rem;
+    padding: 2rem 3rem;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ffc107;
+    border-top: 2px solid #ffc107;
+    box-sizing: border-box;
+}
+
+
+.buttonContainer {
+    border-bottom: 1px solid #e4e44d;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 2rem 0; */
+    margin-bottom: 1.5rem;
+}
+
+.navigation {
+    width: 50%;
+    height: 100%;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.Xbutton {
+    height: 3rem;
+    width: 3rem;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 2rem;
+    /* position: fixed;
+    right: 4rem;
+    top: 2rem; */
+    font-size: 3rem;
+    color: #e4e44d;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        border-radius: 2rem;
+        transform: translate(-50%, -50%);
+        min-height: 32rem;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .buttonContainer {
+        border-bottom: 1px solid #e4e44d;
+        display: flex;
+        justify-content: space-around;
+        /* padding: 0.5rem 0; */
+    }
+
+    .navigation {
+        font-size: 1.5rem;
+        margin: 0.7rem;
+    }
+}
