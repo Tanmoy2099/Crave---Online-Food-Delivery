@@ -19,9 +19,9 @@ const CardForCartItem = ({ src, title, quantity, price, ItemHandler}) => {
 
         </div>
         <div className={classes.buttonContainer}>
-            <button className={`btn btn-warning btn-lg fs-2 `} onClick={()=>ItemHandler(false)}>{`<`}</button>
+            <button className={`btn btn-warning btn-lg fs-1 `} onClick={()=>ItemHandler(false)}>{`<`}</button>
 
-            <button className={`btn btn-warning btn-lg fs-2 `} onClick={()=>ItemHandler(true)}>{`>`}</button>
+            <button className={`btn btn-warning btn-lg fs-1 `} onClick={()=>ItemHandler(true)}>{`>`}</button>
         </div>
     </div>
 }

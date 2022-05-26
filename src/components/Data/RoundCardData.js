@@ -6,7 +6,7 @@ const RoundCardData = [
 
         src: "https://www.thecoldwire.com/wp-content/uploads/2020/11/selection-of-indian-food.jpg",
 
-        title: 'All food'
+        title: 'All Category'
     },
     {
         id: uuid(),
@@ -32,7 +32,7 @@ const RoundCardData = [
     {
         id: uuid(),
         
-        src: 'https://www.holidify.com/images/cmsuploads/compressed/maxresdefault_20180523174132.jpg',
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdKkQD48q-2OaGELGjeseicHbg1CKgNNQIRvQZbwbvS6kzOUSpcsN4UGIVhZsst1yxddQ&usqp=CAU',
 
         title: "Sweets"
     },

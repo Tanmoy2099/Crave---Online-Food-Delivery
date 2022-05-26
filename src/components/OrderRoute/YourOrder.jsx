@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import _ from 'lodash';
 
 import classes from './YourOrder.module.css';
@@ -20,18 +20,19 @@ const YourOrder = () => {
         return (
             
             <li key={data.id} className={classes.cardList}>  
-                <NavLink to={`/your-orders/${tagName}`}> 
+                <Link to={`/your-orders/${tagName}`} style={{ textDecoration: 'none' }}> 
                     <Roundcard
                         src={data.src}>
                         {data.title}
                     </Roundcard>
-                </NavLink>
+                </Link>
             </li>
         )
     });
 
     return (
-        <>
+    <>       
+    <div className={classes.background}/>
             <div className={` ${classes.navMask}`} />
             <div className={` container p-0 ${classes.container}`}>
                 <h2 className={`ls-3 ${classes.categories} `}>Categories</h2>
@@ -43,7 +44,9 @@ const YourOrder = () => {
                 <Outlet />
 
             </div>
-        </>
+        
+    </>
+
     );
 }
 

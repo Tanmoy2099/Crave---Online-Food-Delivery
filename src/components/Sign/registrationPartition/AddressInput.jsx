@@ -17,13 +17,14 @@ const AddressInput = () => {
 
     return <>
         {/*------------------------------Address------------------------------ */}
-        <div className={`form-outline text-warning fs-4`}>
+        <div className={`form-outline text-warning fs-4 ${classes.addressInput}`} >
 
-            <label htmlFor='address'>Address: </label>
+            <label htmlFor='address'>Address*: </label>
 
-            <input className={`form-control fs-4 `}
+            <textarea className={`form-control fs-4 `}
                 type={`text`}
                 id='address'
+                rows="2"
                 autoComplete="on"
                 placeholder='Enter your address'
                 onBlur={() => dispatch('UPDATE_ADDRESS', { isTouched: true })}
@@ -33,11 +34,12 @@ const AddressInput = () => {
 
             {!address.isValid && address.isTouched && <h5>Please Enter a valid Address</h5>}
         </div>
+        
         <div className={`form-outline mb-1 text-warning ${classes.inputContainer}`}>
 
             {/* ------------------------------State------------------------------ */}
             <div className={`form-outline text-warning fs-4 ${classes.name}`}>
-                <label htmlFor='state'>State: </label>
+                <label htmlFor='state'>State*: </label>
 
                 <input className={`form-control fs-4 `}
                     type='text'
@@ -53,7 +55,7 @@ const AddressInput = () => {
 
             {/* ----------------------------Zip------------------------------ */}
             <div className={`form-outline text-warning fs-4 ${classes.name}`}>
-                <label htmlFor='zipCode'>Zip Code: </label>
+                <label htmlFor='zipCode'>Zip Code*: </label>
 
                 <input className={`form-control fs-4 `}
                     type='number'

@@ -1,39 +1,58 @@
+import { useEffect } from 'react'
 import { NavLink } from "react-router-dom";
-// import { useState } from "react";
+
 import { useStore } from "../../../Store/store";
 import classes from "./Navbar.module.css";
+
+// import { auth } from '../../../firebase/firebase'
 
 import { useAuth } from "../../../contexts/AuthContext";
 import Formcontainer from '../../Sign/FormContainer';
 import HeaderCartButton from './HeaderCartButton';
 import CartContainer from "../Cart/CartContainer";
 
-const Navbar = props => {
+const Navbar = () => {
 
     // fetchFood('indian')
 
-    const [{backdrop}, dispatch] = useStore()
+    const [{ backdrop, isLoggedIn }, dispatch] = useStore()
     const { backdropState, cartState } = backdrop
-    // const { isLoggedIn } = state
 
-    const { currentUser, logOut, currentUserData, isLoggedIn } = useAuth()
-    const userId = currentUserData?.userId 
+    const { currentUser, logOut, currentUserData } = useAuth()
+
+    // console.log(isLoggedIn)
+
+
+    const userId = currentUserData?.userId
+    const Dp = currentUserData?.DisplayPicture
+    const displayName = currentUser?.displayName
+
+useEffect(() => {
+    let unsub
+    setTimeout(() => {
+        unsub = loginHandler()
+        dispatch('CHANGE_BACKDROP_STATE', false)
+    }, 1000)
+    return unsub
+}, [])
+
 
     const loginHandler = () => {
         dispatch('CHANGE_BACKDROP_STATE', true)
         dispatch('CHANGE_FORM_STATE', false)
+        
     }
 
     const SignUpHandler = () => {
-        const boolean = true
-        dispatch('CHANGE_BACKDROP_STATE', boolean)
-        dispatch('CHANGE_FORM_STATE', boolean)
+        dispatch('CHANGE_BACKDROP_STATE', true)
+        dispatch('CHANGE_FORM_STATE', true)
     }
 
     const LogoutHandler = async () => {
         try {
             await logOut()
         } catch (error) { console.log(error) }
+        dispatch('LOGGED_IN_FALSE')
     }
     const CartDomHandler = () => {
         dispatch('CHANGE_BACKDROP_STATE', true)
@@ -52,13 +71,17 @@ const Navbar = props => {
 
                 {isLoggedIn ? <>
 
-                    <NavLink to={`/user-profile/${userId}`} className={` ${classes.navigationSign}`} >Hi ! {currentUser?.displayName} </NavLink>
+                    <NavLink to={`/user-profile/${userId}`} className={` ${classes.navigationSign}`} >
+
+                        <input type="text" className={`${classes.dp}`} value={Dp ? Dp : ''} readOnly
+                        /> <span className={classes.dpName}>  Hi, {displayName ? displayName : ''}</span>
+                    </NavLink>
+
                     <p className={` ${classes.navigationSign}`} onClick={LogoutHandler}>Logout</p>
+                </> : <>
+                    <p className={` ${classes.navigationSign}`} onClick={loginHandler}>Login</p>
+                    <p className={` ${classes.navigationSign}`} onClick={SignUpHandler}>Sign up</p>
                 </>
-                    : <>
-                        <p className={` ${classes.navigationSign}`} onClick={loginHandler}>Login</p>
-                        <p className={` ${classes.navigationSign}`} onClick={SignUpHandler}>Sign up</p>
-                    </>
                 }
 
                 <div className={classes.hideCart}>

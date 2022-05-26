@@ -1,0 +1,187 @@
+.containerMask {
+    background-image: url('../../../assets/background-img/FoodAdv1.jpg');
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: 100% 65rem;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    margin: 7rem 0;
+    box-shadow: 1rem 1rem 1rem #00000086;
+}
+
+.container {
+    height: inherit;
+    width: inherit;
+    background-color: #00000046;
+    /* backdrop-filter: blur(2px); */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 12rem;
+    justify-content: center;
+}
+
+.container:hover {
+    background-color: #00000067;
+
+}
+
+.header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid #e0cc18;
+    background-color: #00000069;
+    color: #fff;
+    animation: headerMation 800ms ease-in-out;
+}
+
+.header:hover {
+    background-color: #e0cc18;
+    color: black;
+}
+
+.dishContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    animation: dishContain 800ms ease-in-out;
+}
+
+@keyframes headerMation {
+    0% {
+        transform: translateX(80rem);
+    }
+
+    60% {
+        transform: translateX(-4rem);
+    }
+
+    80% {
+        transform: translateX(4rem);
+    }
+}
+
+
+@keyframes dishContain {
+    0% {
+        transform: translateX(-80rem);
+    }
+
+    60% {
+        transform: translateX(4rem);
+    }
+
+    80% {
+        transform: translateX(-4rem);
+    }
+}
+
+.imagesResize {
+    width: 25rem;
+    height: 25rem;
+    margin: 0.7rem;
+    box-shadow: 1rem 1rem 1rem #00000052;
+    transition: 0.3s;
+    border-radius: 1rem;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+}
+
+.imagesResize:hover {
+    transform: scale(1.08);
+}
+
+@media only screen and (max-width:1823px) {
+    .container {
+        padding: 2rem 6rem;
+    }
+
+    .imagesResize {
+        width: 20rem;
+        height: 20rem;
+    }
+
+}
+
+@media only screen and (max-width:1403px) {
+    .container {
+        padding: 2rem 4rem;
+    }
+
+
+
+    .imagesResize {
+        width: 18rem;
+        height: 15rem;
+    }
+
+}
+
+@media only screen and (max-width:855px) {
+
+    .containerMask {
+        background-image: url('../../../assets/background-img/FoodAdv2.jpg');
+    }
+
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .imagesResize {
+        width: 15rem;
+        height: 12rem;
+    }
+
+}
+
+@media only screen and (max-width:532px) {
+    .containerMask {
+        margin: 3rem 0;
+    }
+
+    .container {
+        padding: 1rem 0;
+    }
+
+    .header {
+        font-size: 2rem;
+    }
+
+    .imagesResize {
+        width: 15rem;
+        height: 12rem;
+    }
+
+}
+
+@media only screen and (max-width:492px) {
+    .imagesResize {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .header {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width:342px) {
+    .imagesResize {
+        height: 8rem;
+    }
+
+    .header {
+        font-size: 1.2rem;
+    }
+}

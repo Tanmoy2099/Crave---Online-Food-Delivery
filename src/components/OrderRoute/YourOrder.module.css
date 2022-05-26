@@ -1,5 +1,15 @@
+.background {
+    background-image: url('../../../src/assets/background-img/Cake.jpg');
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    background-size: contain;
+
+}
+
 .navMask {
-    height: 6rem;
+    height: 5rem;
     width: 100%;
     margin-bottom: 4rem;
 }
@@ -7,7 +17,12 @@
 .container {
     min-height: 55.5rem;
     width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 1rem #0000008e;
+    transition: all 0.3s ease-in-out;
 }
+
 
 .container hr {
     margin: 3rem 0;
@@ -19,13 +34,15 @@
     border-radius: 1rem 3rem 3rem 1rem;
     padding: 1rem;
     letter-spacing: 0.2rem;
-    border: 2px solid black;
-    font-weight: 700;
-
+    border: 2px solid #e0cc18;
+    font-weight: 800;
+    color: #e0cc18;
+    transition: all 0.3s ease-in-out;
 }
 
 .categories:hover {
-    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e)
+    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e);
+    color: #000;
 }
 
 .cardList {

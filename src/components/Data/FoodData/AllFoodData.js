@@ -1,9 +1,8 @@
 import NonVegFoodData from "./NonVegFoodData";
 import VegFoodData from "./VegFoodData";
 import SweetsData from "./SweetsData";
-// import Deserts from "./Deserts";
-// import FastFood from "./FastFood";
+import FastFood from "./fastFood";
 
-const AllFoodData = [...NonVegFoodData, ...VegFoodData, ...SweetsData]
+const AllFoodData = [...NonVegFoodData, ...VegFoodData, ...FastFood, ...SweetsData]
 
-export default AllFoodData;
+export default AllFoodData

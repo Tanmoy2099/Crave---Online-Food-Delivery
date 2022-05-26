@@ -1,4 +1,4 @@
-// import { useCallback, useMemo } from 'react';
+// import { useEffect } from 'react'
 import classes from './OrderCard.module.css';
 import { useStore } from '../../../../Store/store';
 
@@ -7,9 +7,7 @@ import { useStore } from '../../../../Store/store';
 const Ordercard = ({ id, src, title, description, price }) => {
 
 
-    const [state, dispatch] = useStore();
-
-    let cart = state.cart
+    const [{ cart }, dispatch] = useStore();
 
     let thisState = {
         id: id,
@@ -35,35 +33,33 @@ const Ordercard = ({ id, src, title, description, price }) => {
                 title: title,
                 price: price
             })
-        }
-        else {
+
+        }  else {
             if (thisState.quantity > 0) {
                 dispatch('REMOVE_ITEM', { id: id })
-            }
-            else {
+            } else {
                 thisState.quantity = 0
             }
 
         }
     }
 
-
     return (
         <div className={`${classes.container}`}>
             {/* <div className={classes.imgDiscriptionContainer}> */}
-                <div className={`${classes.imgContainer}`}>
-                    <img className={`${classes.cardimage}`} src={src} alt="Card cap" />
+            <div className={`${classes.imgContainer}`}>
+                <img className={`${classes.cardimage}`} src={src} alt="Card cap" />
                 <p className={classes.description420}>{description}</p>
+            </div>
+
+            {/* <span className={classes.discount}>50% off</span> */}
+
+            <div className={classes.cardInfoBox}>
+                <div className='d-flex justify-content-between m-2'>
+                    <h3 className={classes.title} >{title.slice(0,21)}</h3>
+                    <h3 className='h2 font-weight-bold'><span>Rs:</span> {price}</h3>
                 </div>
-
-                {/* <span className={classes.discount}>50% off</span> */}
-
-                <div className={classes.cardInfoBox}>
-                    <div className='d-flex justify-content-between m-2'>
-                        <h5 className={classes.title} >{title}</h5>
-                    <h3 className='h2'><span>Rs:</span> {price}</h3>
-                    </div>
-                    <p className={classes.description}>{description}</p>
+                <p className={classes.description}>{description}</p>
 
                 {/* </div> */}
             </div>
@@ -97,7 +93,7 @@ const Ordercard = ({ id, src, title, description, price }) => {
                 >Add to cart</button>
             }
         </div>
-    );
+    )
 }
 
 export default Ordercard;

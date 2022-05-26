@@ -4,6 +4,7 @@ import Card from "../Card/MainSectionCard"
 import RoundCardData from '../../Data/RoundCardData'
 import Container from "../UI/Container/Container"
 import Ordercard from '../UI/OrderCard/OrderCard'
+import FoodAdv from "./FoodAdv"
 
 import AllFoodData from "../../Data/FoodData/AllFoodData"
 // import RenderCard from "./renderCard"
@@ -12,7 +13,7 @@ import ServiceCard from "./ServiceCard"
 const MainSection = () => {
 
     const cards = RoundCardData.map(cardimg => {
-        if (cardimg.title === 'All food') { return null }
+        if (cardimg.title === 'All Category') { return null }
         return <Card
             key={cardimg.id}
             id={cardimg.id}
@@ -24,10 +25,10 @@ const MainSection = () => {
 
     // let shuffled = []
     // useEffect(() => {
-    //     shuffled = AllFoodData.sort(() => 0.5 - Math.random())
+    // shuffled = AllFoodData.sort(() => 0.5 - Math.random())
 
     // }, [shuffled])
-    // FevoriteOfAll = shuffled.slice(0, 4)
+    // const FevoriteOfAll = shuffled.slice(0, 4)
 
     //     const set = new Set()
     //     const random = () => Math.floor(Math.random() * (AllFoodData.length));
@@ -52,9 +53,21 @@ const MainSection = () => {
     return <>
         <Container> {cards} </Container>
 
-        <div className={`container`}> <h2 className={`ls-3 ${classes.categories} `}>DEAL OF THE DAY!</h2> </div>
-        <Container> {YourFevoriteFood} </Container>
-        <div className={classes.servicesContainer}> <ServiceCard /> </div>
+        <FoodAdv />
+        <div className={classes.frontContainer}>
+            <div className={`container`}> 
+            <h2 className={`ls-3 ${classes.categories} `}>DEAL OF THE DAY!</h2>
+            </div>
+            <div>
+                <Container>
+                    {YourFevoriteFood}
+                </Container>
+            </div>
+            <div className={classes.servicesContainer}> <ServiceCard />
+            </div>
+        </div>
     </>
 }
-export default MainSection;
+
+
+export default MainSection

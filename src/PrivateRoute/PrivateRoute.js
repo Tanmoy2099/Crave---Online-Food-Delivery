@@ -1,12 +1,10 @@
 import React from 'react'
 import { Route, Navigate } from 'react-router-dom'
-// import { useAuth } from '../contexts/AuthContext'
-import { useStore } from '../Store/store'
+import { useAuth } from '../contexts/AuthContext'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
-    const state = useStore()
-    const isLoggedIn = state.isLoggedIn
+    const { isLoggedIn } = useAuth()
 
     return <Route>
         {...rest}

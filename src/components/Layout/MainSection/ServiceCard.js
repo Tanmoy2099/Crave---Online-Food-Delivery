@@ -18,7 +18,7 @@ const servicesArr = [
     {
         key: 1000002,
         freeDelivery: discounts,
-        service: 'Verious discounts'
+        service: 'Various discounts'
     },
 
 ]

@@ -5,12 +5,13 @@
     border-radius: 2rem;
     cursor: pointer;
     display: flex;
+    transition: all 0.3s ease-in-out;
 }
 
 
 .cardContainer:active:hover {
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.425);
-    transform: scale(1.015);
+    transform: scale(1.02);
 }
 
 .cardContainer:hover {
@@ -19,7 +20,7 @@
     -moz-box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
     box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
     animation: scale 200ms ease-in-out;
-    transform: scale(1.03);
+    transform: scale(1.05);
 
 }
 

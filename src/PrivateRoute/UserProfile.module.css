@@ -5,12 +5,28 @@
 }
 
 .container {
-    min-height: 66.7vh;
+    min-height: 68.3vh;
+    background-image: url(../assets/background-img/Cake.jpg);
+    object-fit: contain;
+}
+
+.details {
+    background-color: #ffffffa9;
+    border-radius: 2rem;
+    backdrop-filter: blur(3px);
+    padding: 1rem;
+}
+
+.address {
+    list-style-type: none;
+    border: 2px dotted black;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
 }
 
 .dp {
     font-size: 5rem;
-    font-weight:900;
+    font-weight: 900;
     width: 10rem;
     height: 10rem;
     text-align: center;
@@ -19,4 +35,36 @@
     border: 1px solid #e0cc18;
     box-shadow: 0.8rem 0.5rem 1rem #00000059;
     font-family: 'Dancing Script', cursive;
+}
+
+.verified {
+    font-family: 'Dancing Script', cursive;
+    color: #015501;
+    padding: 0.2rem;
+    border: 1px solid #015501;
+    margin-left: 2rem;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.NotVerified {
+    font-family: 'Dancing Script', cursive;
+    color: #910000;
+    padding: 0.2rem;
+    border: 1px solid #910000;
+    margin-left: 2rem;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.verified:hover {
+    background-color: #015501;
+    color: white;
+}
+
+.NotVerified:hover {
+    background-color: #910000;
+    color: #ffffff;
 }

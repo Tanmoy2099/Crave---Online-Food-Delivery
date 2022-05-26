@@ -7,35 +7,35 @@ import { useStore } from '../../../Store/store';
 
 const HeaderCartButton = ({ CartDomHandler }) => {
 
-    const state = useStore()[0];
+    const { cart } = useStore()[0]
 
     // console.log(state.cart);
 
-    const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+    const [btnIsHighlighted, setBtnIsHighlighted] = useState(false)
 
-    const { items, totalAmount } = state.cart;
+    const { items, totalAmount } = cart;
 
     const numberOfCartItems = items.reduce((curNumber, item) => {
         curNumber += item.quantity
         return curNumber
     }, 0);
 
-    const btnClasses = `${classes.button} ${btnIsHighlighted ? classes.bump : ''}`;
+    const btnClasses = `${classes.button} ${btnIsHighlighted ? classes.bump : ''}`
 
     useEffect(() => {
         if (items.length === 0) {
-            return;
+            return
         }
         setBtnIsHighlighted(true);
 
         const timer = setTimeout(() => {
-            setBtnIsHighlighted(false);
+            setBtnIsHighlighted(false)
         }, 300);
 
         return () => {
-            clearTimeout(timer);
-        };
-    }, [items]);
+            clearTimeout(timer)
+        }
+    }, [items])
 
     return <>
         <button className={btnClasses} onClick={CartDomHandler}>
@@ -48,6 +48,6 @@ const HeaderCartButton = ({ CartDomHandler }) => {
         {/* <button className={`btn btn-warning w-100 h-40 fs-3 ${classes.cartButton}`}>{`total: ${totalAmount}`}</button> */}
     </>
 
-};
+}
 
-export default HeaderCartButton;
+export default HeaderCartButton

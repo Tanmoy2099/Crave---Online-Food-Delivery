@@ -47,19 +47,20 @@ const Footer = () => {
             </div>
 
 
-
             <div className={classes.bottomFooter}>
                 <h4>Copyright &copy; 2020 - {year} All Rights reserved. </h4>
                 <h5>made with ❤ by <span>Tanmoy Nath</span> </h5>
             </div>
         </footer>
-        {items.length && <div className={` ${classes.cartButtonContainer}`}>
+        {items.length?  <div className={` ${classes.cartButtonContainer}`}>
 
             <p style={{ color: 'white', fontSize: '1.5rem' }}>Add foods to your cart</p>
 
             <HeaderCartButton CartDomHandler={CartDomHandler}  />
-        </div>}
+        </div> : ''
+        }
     </>
 }
 
-export default Footer;
+export default Footer
+

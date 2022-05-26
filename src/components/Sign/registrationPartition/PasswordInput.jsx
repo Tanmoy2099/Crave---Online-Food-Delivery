@@ -16,7 +16,7 @@ function PasswordInput() {
 
     return (
         <div className={`form-outline text-warning fs-4 ${classes.name}`}>
-            <label className={``} htmlFor='password'>Password: </label>
+            <label className={``} htmlFor='password'>Password*: </label>
 
             <input className={`form-control fs-4 mb-2 `}
                 type='password'

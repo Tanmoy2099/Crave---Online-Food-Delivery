@@ -3,10 +3,7 @@ import configureBackdropStore from './BackdropFormHandle'
 import configureRegistrationStore from './RegistrationHandle'
 import configureLoginStore from './loginHandle'
 import configureErrorStore from './ErrorHandle'
-// import configureCurrentUserDataStore from './currentUserDataHandle'
-// import ConfigureAuthenticationStore from './firebaseHandle'
-
-
+import configureIsLoggedInStore from './IsLoggedInHandle'
 
 
 function callStoreFunctionsInIndex() {
@@ -16,8 +13,7 @@ function callStoreFunctionsInIndex() {
     configureRegistrationStore()
     configureLoginStore()
     configureErrorStore()
-    // configureCurrentUserDataStore()
-    // ConfigureAuthenticationStore()
+    configureIsLoggedInStore()
 
 }
 

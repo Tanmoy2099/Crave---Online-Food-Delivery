@@ -10,7 +10,7 @@ const Roundcard = (props) => {
                 <img src={props.src} alt="categories" />
             </div>
 
-            <h3 className={`${classes.tagname}`} >{props.children}</h3>
+            <h4 className={`${classes.tagname}`} >{props.children}</h4>
         </div>
     );
 }

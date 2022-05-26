@@ -14,7 +14,7 @@ const NameInput = () => {
 
             {/* ------------------------------First Name------------------------------ */}
             <div className={`form-outline mb-1 text-warning fs-4 ${classes.name}`}>
-                <label className={``} htmlFor='firstName'>First Name: </label>
+                <label className={``} htmlFor='firstName'>First Name*: </label>
 
                 <input className={`form-control fs-4 `}
                     type='text'
@@ -30,7 +30,7 @@ const NameInput = () => {
 
             {/* ----------------------------Last Name------------------------------ */}
             <div className={`form-outline mb-1 text-warning fs-4 ${classes.name}`}>
-                <label className={``} htmlFor='lastName'>Last Name: </label>
+                <label className={``} htmlFor='lastName'>Last Name*: </label>
 
                 <input className={`form-control fs-4 `}
                     type='text'

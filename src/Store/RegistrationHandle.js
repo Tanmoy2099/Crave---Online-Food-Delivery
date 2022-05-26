@@ -20,6 +20,11 @@ const configureRegistrationStore = () => {
                 isValid: false,
                 isTouched: false
             },
+            phone: {
+                value: '',
+                isValid: false,
+                isTouched: false
+            },
             password: {
                 value: '',
                 isValid: false,
@@ -71,6 +76,12 @@ const configureRegistrationStore = () => {
                 email: { ...state.registrationForm.email, ...curState }
             }
         }),
+        UPDATE_PHONE_NUMBER: (state, curState) => ({
+            registrationForm: {
+                ...state.registrationForm,
+                phone: { ...state.registrationForm.phone, ...curState }
+            }
+        }),
         UPDATE_PASSWORD: (state, curState) => ({
             registrationForm: {
                 ...state.registrationForm,
@@ -104,10 +115,10 @@ const configureRegistrationStore = () => {
                 zip: { ...registrationForm.zip, ...curState }
             }
         }),
-        UPDATE_NEWS_LETTER: (state, curState) => ({
+        UPDATE_NEWS_LETTER: ({ registrationForm}, curState) => ({
             registrationForm: {
-                ...state.registrationForm, curState
-
+                ...registrationForm,
+                news_letter_checked: curState
             }
         })
     }

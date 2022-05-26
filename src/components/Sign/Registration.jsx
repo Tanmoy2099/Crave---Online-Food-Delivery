@@ -8,34 +8,40 @@ import AddressInput from './registrationPartition/AddressInput'
 import EmailInput from './registrationPartition/EmailInput'
 import NameInput from './registrationPartition/NameInput'
 import { useStore } from '../../Store/store'
-
+// import { useAuth } from '../../contexts/AuthContext'
 
 function Registration() {
-    const { isLoggedIn, error } = useStore()[0]
+    const { error, isLoggedIn } = useStore()[0]
     const { signupError } = error
 
+    
+
     return <>
-        {!isLoggedIn &&
-            <form >
+        {!isLoggedIn ?
+            <form>
+            <div className={classes.regContainer}>
                 {/* ----------------Fullname-----Email------------- */}
                 {signupError &&
                     <h2 className={`${classes.error}`}>Email id already registered, Goto Sign in</h2>
                 }
                 <NameInput />
                 <EmailInput />
-
-                {/* ---------------password----------------- */}
                 <AddressInput />
 
+                {/* ---------------password----------------- */}
                 <div className={`form-outline text-warning fs-3 ${classes.inputContainer}`}>
                     <PasswordInput />
                     <ConfirmPasswordInput />
                 </div>
                 <NewsletterCheckbox />
+                </div>
                 <Submitbutton />
-            </form>}
-        {isLoggedIn &&
+            </form>
+        :<>
             <h1 className={classes.success}>Registered Successfully !</h1>
+                <h1 className={classes.success}>Verification email is sent, kindly varify your email !</h1>
+        
+        </>
         }
     </>
 }

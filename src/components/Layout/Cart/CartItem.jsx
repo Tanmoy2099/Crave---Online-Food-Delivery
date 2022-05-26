@@ -1,18 +1,13 @@
 
-// import { memo } from 'react';
-import classes from './CartItem.module.css';
-import { useStore } from '../../../Store/store';
-import CardForCartItem from './CardForCartItem';
+import classes from './CartItem.module.css'
+import { useStore } from '../../../Store/store'
+
+import CardForCartItem from './CardForCartItem'
 
 const CartItem = () => {
+  const [{ cart }, dispatch] = useStore()
 
-
-  const [state, dispatch] = useStore()
-
-  let items = state.cart.items;
-  let totalAmount = state.cart.totalAmount;
-
-  // console.log(totalAmount);
+  let { items, totalAmount } = cart
 
   let selectedItems;
   items.sort((a, b) => a.id - b.id)
@@ -69,19 +64,23 @@ const CartItem = () => {
     />
   })
 
+
   return <>
+    <h3 className={classes.empty}>This is a Demo Project, Please Don't Order anything, Thank you</h3> 
     {items.length ?
       <>
         <div className={classes.itemContainer}>
           {selectedItems}
         </div>
-
         <button className={`btn btn-outline-warning btn-lg w-100 fs-2`}>Order now |  total price: {`${totalAmount}`} rs</button>
       </>
       :
+      <>
       <h1 className={classes.empty}>Cart is Empty</h1>
+        
+      </>
     }
   </>
-};
+}
 
 export default CartItem;

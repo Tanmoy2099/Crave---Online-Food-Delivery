@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { useAuth } from './contexts/AuthContext'
+import { useStore } from './Store/store'
+import { AuthProvider } from './contexts/AuthContext'
 
 import LoadingSpinner from './components/Layout/UI/Spinner/LoadingSpinner'
 
@@ -22,28 +23,27 @@ const NonVegetarian = lazy(() => import('./components/Layout/FoodCategories/NonV
 
 const App = () => {
 
-  const { isLoggedIn } = useAuth()
-
-  return (
-    <>
-
+  const { isLoggedIn } = useStore()[0]
+  return <>
+    <AuthProvider>
       <Suspense fallback={
         <div className='centered'><LoadingSpinner /> </div>}>
-      <Navbar />
+        <Navbar />
+
         <Routes>
           <Route path='/' element={<Navigate to='/home' />} />
           <Route path='/your-orders' element={<Navigate to='/your-orders/all-food' />} />
 
           {isLoggedIn ? <Route path='/user-profile' element={<Navigate to='/user-profile/:userProfile' />} />
-            : <Route path='/user-profile/*' element={<Navigate to='/home' />} /> }
+            : <Route path='/user-profile/*' element={<Navigate to='/home' />} />}
 
           {isLoggedIn && <Route path='/user-profile/*' element={<UserProfile />} >
             <Route path=':userProfile' element={<UserProfile />} />
-          </Route> }
-
+          </Route>}
+          
           <Route path='/home' element={<><Header /><MainSection /></>} />
           <Route path='/your-orders/*' element={<YourOrder />}>
-            <Route path={`all-food`} element={<AllTypeFood />} />
+            <Route path={`all-category`} element={<AllTypeFood />} />
             <Route path={`non-veg`} element={<NonVegetarian />} />
             <Route path={`veg`} element={<Vegetarian />} />
             <Route path={`fast-food`} element={<FastFood />} />
@@ -51,10 +51,10 @@ const App = () => {
           </Route>
           <Route path='/*' element={<PageNotFound />} />
         </Routes>
-      <Footer />
+        <Footer />
       </Suspense>
-    </>
-  );
+    </AuthProvider>
+  </>
 }
 
-export default App;
+export default App

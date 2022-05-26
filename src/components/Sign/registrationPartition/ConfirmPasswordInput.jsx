@@ -16,7 +16,7 @@ function ConfirmPasswordInput() {
     }
     return (
         <div className={`form-outline mb-1 text-warning fs-4 ${classes.name}`}>
-            <label className={` `} htmlFor='confirmPassword'>Confirm Password: </label>
+            <label className={` `} htmlFor='confirmPassword'>Confirm Password*: </label>
 
             <input className={`form-control fs-4 mb-1`}
                 type='password'

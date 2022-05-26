@@ -6,9 +6,15 @@
     box-shadow: none;
 }
 
+.regContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .inputContainer {
     display: flex;
     justify-content: space-between;
+
 }
 
 .name {
@@ -23,12 +29,16 @@
 }
 
 .success {
-    height: 20rem;
+    height: 10rem;
     color: #ffc107;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.addressInput{
+    width:100%;
+} 
 
 @media only screen and (max-width:600px) {
     .container {
@@ -38,8 +48,18 @@
     .inputContainer {
         flex-direction: column;
         justify-content: center;
+        width: 95%;
     }
 
+    .regContainer {
+        max-height: 45rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .addressInput {
+        width: 95%;
+    }
 
     .name {
         width: 100%;

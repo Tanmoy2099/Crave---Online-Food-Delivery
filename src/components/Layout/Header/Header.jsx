@@ -7,7 +7,9 @@ import Veg from "../../../assets/background-img/veg.jpg";
 
 
 
-const Header = (props) => {
+const Header = () => {
+
+
   return (
     <div className={`container-fluid ${classes.container}`}>
 
@@ -41,4 +43,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default Header

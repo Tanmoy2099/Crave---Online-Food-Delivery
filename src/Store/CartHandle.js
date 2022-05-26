@@ -1,6 +1,14 @@
-import { initStore } from './store';
+import { initStore } from './store'
+
+const initialState = {
+    cart: {
+        items: [],
+        totalAmount: 0
+    }
+}
 
 const configureCartStore = () => {
+
 
     const addItem = (cartItems, addItem) => {
 
@@ -78,6 +86,10 @@ const configureCartStore = () => {
     }
 
     const actions = {
+        CART_DB: (state,  DBcart) => ({
+            cart: { ...DBcart  }
+        }),
+
         ADD_ITEM: (state, item) => ({
             cart: {
                 items: addItem(state.cart.items, item),
@@ -91,14 +103,9 @@ const configureCartStore = () => {
                 totalAmount: removeFromTotal(state.cart, item)
             }
         }),
-    };
+    }
 
-    initStore(actions, {
-        cart: {
-            items: [],
-            totalAmount: 0
-        }
-    });
+    initStore(actions, initialState);
 };
 
 export default configureCartStore;

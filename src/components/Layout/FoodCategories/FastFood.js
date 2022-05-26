@@ -1,24 +1,24 @@
 
 import Container from "../UI/Container/Container";
-import NonVegFoodData from "../../Data/FoodData/NonVegFoodData";
+import fastFood from "../../Data/FoodData/fastFood";
 import Ordercard from '../UI/OrderCard/OrderCard';
 
 const FastFood = () => {
 
-    const NonVegFood = NonVegFoodData.map(nonVeg => {
-        
+    const fastF = fastFood.map(fastfood => {
+
         return <Ordercard
-            key={nonVeg.id}
-            id={nonVeg.id}
-            src={nonVeg.src}
-            title={nonVeg.title}
-            description={nonVeg.description}
-            price={nonVeg.price} />
+            key={fastfood.id}
+            id={fastfood.id}
+            src={fastfood.src}
+            title={fastfood.title}
+            description={fastfood.description}
+            price={fastfood.price} />
     })
 
     return (
         <Container>
-            {NonVegFood}
+            {fastF}
         </Container>
     )
 }

@@ -4,24 +4,29 @@
     border-radius: 1rem 3rem 3rem 1rem;
     padding: 1rem;
     letter-spacing: 0.2rem;
-    border: 2px solid black;
+    border: 2px solid #e0cc18;
     font-weight: 700;
-    margin: 5rem 0;
+    margin: 2rem 0;
     box-sizing: border-box;
+    color: #e0cc18;
+    transition: all 0.3s ease-in-out;
+
 }
 
 
+
 .categories:hover {
-    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e)
+    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e);
+    color: #000;
 }
 
 .servicesContainer {
     margin: 2rem auto;
-    width: 80vw;
+    width: 70vw;
     height: 30rem;
     /* background-color: #fff; */
-    backdrop-filter: blur(10px);
-    border-radius: 20rem;
+    backdrop-filter: blur(5px);
+    border-radius: 8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -29,7 +34,9 @@
     -webkit-box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
     box-shadow: 5px 6px 12px -1px rgba(0, 0, 0, 0.49);
-    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e)
+    background-image: linear-gradient(#bead0e, #e0cc18, #f7efaa, #e0cc18, #bead0e);
+    transition: all 0.3s ease-in-out;
+
 }
 
 .services {
@@ -49,9 +56,15 @@
 
 }
 
+.frontContainer {
+    background-image: url('../../../assets/background-img/Cake.jpg');
+    object-fit: contain;
+    padding: 0.5rem 0;
+}
+
 @media only screen and (max-width: 1200px) {
     .servicesContainer {
-        height: 20rem;
+        width: 85vw;
     }
 
     .services {
