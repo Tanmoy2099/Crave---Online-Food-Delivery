@@ -19,6 +19,8 @@ import { createUserWithEmailAndPassword,
 const AuthContext = createContext()
 const useAuth = () => useContext(AuthContext)
 
+
+// Somehow rendering at first load
 function AuthProvider({ children }) {
 
     const dispatch = useStore()[1]
